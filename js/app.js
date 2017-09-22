@@ -12,6 +12,8 @@ function fMarker(name, lat, long, type, content) {
         draggable: true
     });
 
+    this.streetViewService = new google.maps.StreetViewService();
+    this.radius = 50;
 
 
     this.marker.addListener('click', function() {
