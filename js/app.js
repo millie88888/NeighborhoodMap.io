@@ -4,7 +4,7 @@ function fMarker(name, lat, lng, type, content) {
         path: 'M24,0C14.2,0,6.3,7.8,6.3,17.4C6.3,32.9,24,48,24,48s17.7-15.4,17.7-30.6C41.7,7.8,33.8,0,24,0z',
         fillColor: '#efb7c2',
         fillOpacity: 1,
-        scale: .5,
+        scale: 0.5,
         strokeWeight: 2,
         strokeColor: '#efb7c2',
     };
@@ -35,7 +35,7 @@ function fMarker(name, lat, lng, type, content) {
         infowindow.setContent('<div><strong>' + this.title + '</strong></div>' + '<div>' + this.content + '</div><div id="pano"></div>');
         infowindow.open(map, this);
     });
-};
+}
 
 
 
@@ -71,7 +71,7 @@ var ViewModel = function() {
     this.clickOption = function(option) {
         self.typeToShow(option.value);
 
-    }
+    };
 
     ///filter marker with checked: typeToShow
     this.markersToShow = ko.computed(function() {
@@ -125,7 +125,7 @@ $(document).ready(function() {
 
     function hamburger_cross() {
 
-        if (isClosed == true) {
+        if (isClosed === true) {
             overlay.hide();
             trigger.removeClass('is-open');
             trigger.addClass('is-closed');
