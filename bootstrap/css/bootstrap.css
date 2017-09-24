@@ -601,8 +601,9 @@ pre code {
 }
 
 .container {
+  margin-top: 50px
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 50px;
   padding-right: 15px;
   padding-left: 15px;
   width: 100%;
@@ -616,19 +617,19 @@ pre code {
 
 @media (min-width: 768px) {
   .container {
-    max-width: 720px;
+    max-width: 100%;
   }
 }
 
 @media (min-width: 992px) {
   .container {
-    max-width: 960px;
+    max-width: 100%;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px;
+    max-width: 100%;
   }
 }
 
@@ -1119,12 +1120,12 @@ pre code {
     max-width: 58.333333%;
   }
   .col-lg-8 {
-
+    -ms-flex: 0 0 95%;
+        flex: 0 0 95%;
   }
   .col-lg-9 {
-    -ms-flex: 0 0 75%;
-        flex: 0 0 75%;
-    max-width: 75%;
+    -ms-flex: 0 0 95%;
+        flex: 0 0 95%;
   }
   .col-lg-10 {
     -ms-flex: 0 0 83.333333%;
@@ -3151,11 +3152,12 @@ tbody.collapse.show {
 }
 
 .nav {
+  margin-top: 15rem;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding-left: 0;
+  padding: 8px 8px 8px 32px;
   margin-bottom: 0;
   list-style: none;
 }

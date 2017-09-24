@@ -14,8 +14,9 @@ html {
 }
 
 .container {
+  margin-top: 50px;
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 50px;
   padding-right: 15px;
   padding-left: 15px;
   width: 100%;
@@ -29,19 +30,19 @@ html {
 
 @media (min-width: 768px) {
   .container {
-    max-width: 720px;
+    max-width: 100%;
   }
 }
 
 @media (min-width: 992px) {
   .container {
-    max-width: 960px;
+    max-width: 100%;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px;
+    max-width: 100%;
   }
 }
 
@@ -533,9 +534,8 @@ html {
     max-width: 58.333333%;
   }
   .col-lg-8 {
-    -ms-flex: 0 0 66.666667%;
-        flex: 0 0 66.666667%;
-    max-width: 66.666667%;
+    -ms-flex: 0 0 95%;
+        flex: 0 0 95%;
   }
   .col-lg-9 {
     -ms-flex: 0 0 75%;

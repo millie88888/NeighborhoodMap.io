@@ -9,6 +9,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCg9tqRTA5_3fUdgNA0gyNOREfZ3rItyg"></script>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 </head>
@@ -16,25 +17,22 @@
 <body>
 
     <div id="wrapper">
-        <div class="overlay"></div>
+
 
         <!-- Sidebar -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-            <ul class="nav sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">My Favorites</a>
-                </li>
-                <li>
-                    <a href="#">Show All</a>
-                </li>
-                <li>
-                    <a href="#">Restaurant</a>
-                </li>
-                <li>
-                    <a href="#">Shops</a>
-                </li>
-            </ul>
-        </nav>
+        <div>
+            <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+                <p id="ohmy">OH! MY</p>
+                <p id="fav">FAV<i class="fa fa-heart" aria-hidden="true"></i>RITES </p>
+                <ul class="nav sidebar-nav" data-bind="foreach:filterOptions">
+                    <li class="sidebar-brand" data-bind="text: label, click: $parent.clickOption"></li>
+                </ul>
+
+
+            </nav>
+
+        </div>
+
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
@@ -50,38 +48,38 @@
                         <h1>Are you looking for something?</h1>
                         <p data-bind='fadeVisible: filtermarker'>
                             Show:
-
-
                             <label>
-                                <input type='radio' value='all' data-bind='checked: typeToShow' />All</label>
+                                <input type='radio' value='all' data-bind='checked: typeToShow' /> All</label>
                             <label>
-                                <input type='radio' value='restaurant' data-bind='checked: typeToShow' />Restaurant</label>
+                                <input type='radio' value='restaurant' data-bind='checked: typeToShow' /> Restaurants</label>
                             <label>
-                                <input type='radio' value='drink' data-bind='checked: typeToShow' />Shops</label>
+                                <input type='radio' value='drink' data-bind='checked: typeToShow' /> Drinks
+                            </label>
+                            <label>
+                                <input type='radio' value='grocery' data-bind='checked: typeToShow' /> Grocery
+                            </label>
 
                             <div data-bind='template: { foreach: markersToShow }'>
                                 <div data-bind='text: name'> </div>
                                 <div data-bind='fmarker'> </div>
                             </div>
-
-                        </p>
-
+                        
                         <div id="map"></div>
-                        <p>Bacon ipsum dolor sit amet tri-tip shoulder tenderloin shankle. Bresaola tail pancetta ball tip doner meatloaf corned beef. Kevin pastrami tri-tip prosciutto ham hock pork belly bacon pork loin salami pork chop shank corned beef tenderloin meatball cow. Pork bresaola meatloaf tongue, landjaeger tail andouille strip steak tenderloin sausage chicken tri-tip. Pastrami tri-tip kielbasa sausage porchetta pig sirloin boudin rump meatball andouille chuck tenderloin biltong shank </p>
 
                     </div>
                 </div>
             </div>
+            <i class="fa fa-facebook" aria-hidden="true" style="color: white"></i>
         </div>
         <!-- /#page-content-wrapper -->
 
     </div>
-
 
 </body>
 
 <script src="js/knockout-3.4.0.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/app.js"></script>
+<script src="https://use.fontawesome.com/6985fafc06.js"></script>
 
 </html>
