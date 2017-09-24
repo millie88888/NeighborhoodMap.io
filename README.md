@@ -66,6 +66,6 @@ your UI and in your README that you are using Foursquare data.
 the [Udacity JavaScript Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html).If build tools (such as Gulp or Grunt) are used, both source and production code are submitted in the same repository in separate directories. These directories are usually named src and dist respectively.
 
 
-###Authors
+### Authors
 Jialing Liu
 
