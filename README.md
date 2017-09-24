@@ -9,11 +9,12 @@ all the markers presented the locations's informations.
 To view live version can be found [here](https://millie88888.github.io/NeighborhoodMap.io/).
 
 ### Frameworks/technologies used
-- [Bootstrap CSS](http://getbootstrap.com/)
+- [Bootstrap](http://getbootstrap.com/)
 - [Knockoutjs](https://knockoutjs.com/)
 - [Google Map API](https://developers.google.com/maps/)
-- HTML5 
-- CSS3
+- [jQuery](http://jquery.com/)  
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)  
+ 
 
 
 ### Project specifications - Udacity's project requirements
