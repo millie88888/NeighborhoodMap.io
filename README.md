@@ -1,4 +1,5 @@
-# neighborhood-map
+# Neighborhood Map
+
 
 Build a single page application with Google Map Service API.
 
