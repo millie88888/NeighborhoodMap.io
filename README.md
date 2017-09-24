@@ -6,16 +6,17 @@ In this project you will see what I recommand the places to go,
 
 all the markers presented the locations's informations.
 
-To view this live version can be found [here](https://millie88888.github.io/NeighborhoodMap.io/).
+To view live version can be found [here](https://millie88888.github.io/NeighborhoodMap.io/).
 
 ### Frameworks/technologies used
 - [Bootstrap CSS](http://getbootstrap.com/)
 - [Knockoutjs](https://knockoutjs.com/)
 - [Google Map API](https://developers.google.com/maps/)
-- [Google Street View API](https://developers.google.com/streetview/)
-- [FourSquare API](https://developer.foursquare.com/)
+- HTML5 
+- CSS3
 
-### Project specifications - Per Udacity's project requirements
+
+### Project specifications - Udacity's project requirements
 
 **Interface** must include the following features:
 - All application components render on-screen in a responsive manner.
@@ -61,17 +62,3 @@ your UI and in your README that you are using Foursquare data.
 - Comments are present and effectively explain longer code procedures.
 - Code is formatted with consistent, logical, and easy-to-read formatting as described in 
 the [Udacity JavaScript Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html).
-
-### Setting up the project - using mac/linux terminal
-
-1. [Clone](https://github.com/jwelker110/neighborhood-map.git) this repo.
-2. [Install](http://blog.npmjs.org/post/85484771375/how-to-install-npm) npm.
-3. `cd` into the project's folder. You should see the src and built folders here.
-4. `npm install` to install TypeScript compiler and http-server
-5. `npm start` to compile the files and serve using http-server.
-6. You will be able to access the map in a web browser by typing in `localhost:8080`.
-
-### Using the app
-
-1. Entering only a search term will search in a radius from the center of the current view.
-2. To search near a specific location, enter `searchTerm near locationName`
