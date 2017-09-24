@@ -1,13 +1,12 @@
 # neighborhood-map
 
-The goal of this project is to create a simple map using Google's Map Service API.
+Build a single page application with Google Map Service API.
 
-The map should present users with at least 5 locations/points of interest.
+In this project you will see what I recommand the places to go, 
 
-Users should be able to select a location marker and be presented with that location's information, 
-queried from a 3rd party API.
+all the markers presented the locations's informations.
 
-The live version can be found [here](https://jwelker110.github.io/neighborhood-map/).
+To view this live version can be found [here](https://millie88888.github.io/NeighborhoodMap.io/).
 
 ### Frameworks/technologies used
 - [Bootstrap CSS](http://getbootstrap.com/)
