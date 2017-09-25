@@ -23,18 +23,26 @@ function fMarker(name, lat, lng, type, content) {
         draggable: true,
         animation: google.maps.Animation.DROP,
         icon: icon
-
     });
+
 
     this.streetViewService = new google.maps.StreetViewService();
     this.radius = 50;
 
-
-
     this.marker.addListener('click', function() {
+
         infowindow.setContent('<div><strong>' + this.title + '</strong></div>' + '<div>' + this.content + '</div><div id="pano"></div>');
         infowindow.open(map, this);
+
+        //this.setAnimation(google.maps.Animation.BOUNCE);
+        //this.setAnimation(null);        
+
     });
+
+
+
+
+
 }
 
 
@@ -70,7 +78,6 @@ var ViewModel = function() {
 
     this.clickOption = function(option) {
         self.typeToShow(option.value);
-
     };
 
     ///filter marker with checked: typeToShow
@@ -287,6 +294,7 @@ var map = new google.maps.Map(document.getElementById('map'), {
 
 
 var infowindow = new google.maps.InfoWindow();
+
 
 
 var viewModel = new ViewModel();
