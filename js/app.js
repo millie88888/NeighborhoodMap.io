@@ -7,6 +7,7 @@ function fMarker(name, lat, lng, type, content) {
         scale: 0.5,
         strokeWeight: 2,
         strokeColor: '#efb7c2',
+
     };
 
     this.name = name;
@@ -29,16 +30,26 @@ function fMarker(name, lat, lng, type, content) {
     this.streetViewService = new google.maps.StreetViewService();
     this.radius = 50;
 
+
+
     this.marker.addListener('click', function() {
 
         infowindow.setContent('<div><strong>' + this.title + '</strong></div>' + '<div>' + this.content + '</div><div id="pano"></div>');
         infowindow.open(map, this);
-
         //this.setAnimation(google.maps.Animation.BOUNCE);
         //this.setAnimation(null);        
-
+        if (this.getAnimation() !== null) {
+          this.setAnimation(null);
+        } else {
+          this.setAnimation(google.maps.Animation.BOUNCE);
+       }
+      
     });
 
+    this.marker.addListener(infowindow, 'closeclick', function()
+        {
+        this.setAnimation(null); 
+    });
 
 
 
@@ -82,11 +93,10 @@ var ViewModel = function() {
 
     ///filter marker with checked: typeToShow
     this.markersToShow = ko.computed(function() {
+
         var desiredType = this.typeToShow();
         if (desiredType == 'all') {
-
             this.points().forEach(function(point) {
-
                 point.marker.setVisible(true);
 
             });
@@ -299,7 +309,6 @@ var infowindow = new google.maps.InfoWindow();
 
 var viewModel = new ViewModel();
 ko.applyBindings(viewModel);
-
 
 
 
