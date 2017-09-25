@@ -30,13 +30,7 @@ function fMarker(name, lat, lng, type, content) {
     this.streetViewService = new google.maps.StreetViewService();
     this.radius = 50;
 
-
-var infowindow = new google.maps.InfoWindow();
-
-
-
-
-this.marker.addListener('click', function() {
+    this.marker.addListener('click', function() {
 
 
     infowindow.setContent('<div><strong>' + this.title + '</strong></div>' + '<div>' + this.content + '</div><div id="pano"></div>');
@@ -44,19 +38,16 @@ this.marker.addListener('click', function() {
     
        
 
-  var marker = this;
-    if (this.getAnimation() !== null) {
-      this.setAnimation(null);
+    var marker = this;
+        if (this.getAnimation() !== null) {
+        this.setAnimation(null);
 
-    } else {
-      this.setAnimation(google.maps.Animation.BOUNCE);
+        } else {
+        this.setAnimation(google.maps.Animation.BOUNCE);
         setTimeout(function(){ marker.setAnimation(null); }, 750);
 
-   }
-
-  
-});
-
+        }
+    });
 }
 
 
@@ -312,9 +303,6 @@ var infowindow = new google.maps.InfoWindow();
 
 var viewModel = new ViewModel();
 ko.applyBindings(viewModel);
-
-
-
 
 
 
