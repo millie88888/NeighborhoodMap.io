@@ -26,10 +26,6 @@ function fMarker(name, lat, lng, type, content) {
         icon: icon
     });
 
-
-    this.streetViewService = new google.maps.StreetViewService();
-    this.radius = 50;
-
     this.marker.addListener('click', function() {
 
 
