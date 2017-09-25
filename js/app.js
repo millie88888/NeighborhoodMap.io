@@ -31,28 +31,31 @@ function fMarker(name, lat, lng, type, content) {
     this.radius = 50;
 
 
-
-    this.marker.addListener('click', function() {
-
-        infowindow.setContent('<div><strong>' + this.title + '</strong></div>' + '<div>' + this.content + '</div><div id="pano"></div>');
-        infowindow.open(map, this);
-        //this.setAnimation(google.maps.Animation.BOUNCE);
-        //this.setAnimation(null);        
-        if (this.getAnimation() !== null) {
-          this.setAnimation(null);
-        } else {
-          this.setAnimation(google.maps.Animation.BOUNCE);
-       }
-      
-    });
-
-    this.marker.addListener(infowindow, 'closeclick', function()
-        {
-        this.setAnimation(null); 
-    });
+var infowindow = new google.maps.InfoWindow();
 
 
 
+
+this.marker.addListener('click', function() {
+
+
+    infowindow.setContent('<div><strong>' + this.title + '</strong></div>' + '<div>' + this.content + '</div><div id="pano"></div>');
+    infowindow.open(map, this);
+    
+       
+
+  var marker = this;
+    if (this.getAnimation() !== null) {
+      this.setAnimation(null);
+
+    } else {
+      this.setAnimation(google.maps.Animation.BOUNCE);
+        setTimeout(function(){ marker.setAnimation(null); }, 750);
+
+   }
+
+  
+});
 
 }
 
@@ -309,6 +312,7 @@ var infowindow = new google.maps.InfoWindow();
 
 var viewModel = new ViewModel();
 ko.applyBindings(viewModel);
+
 
 
 
