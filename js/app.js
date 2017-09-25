@@ -1,5 +1,5 @@
 // fMarker to set the marker display
-function fMarker(name, lat, lng, type, content) {
+function fMarker(name, lat, lng, type, content, id) {
     var icon = {
         path: 'M24,0C14.2,0,6.3,7.8,6.3,17.4C6.3,32.9,24,48,24,48s17.7-15.4,17.7-30.6C41.7,7.8,33.8,0,24,0z',
         fillColor: '#efb7c2',
@@ -15,6 +15,7 @@ function fMarker(name, lat, lng, type, content) {
     this.long = lng;
     this.type = type;
     this.content = content;
+    this.id = id;
 
     this.marker = new google.maps.Marker({
         position: new google.maps.LatLng(lat, lng),
@@ -23,17 +24,15 @@ function fMarker(name, lat, lng, type, content) {
         content: content,
         draggable: true,
         animation: google.maps.Animation.DROP,
-        icon: icon
+        icon: icon,
+        id: id
     });
 
-
-    this.streetViewService = new google.maps.StreetViewService();
-    this.radius = 50;
 
     this.marker.addListener('click', function() {
 
 
-    infowindow.setContent('<div><strong>' + this.title + '</strong></div>' + '<div>' + this.content + '</div><div id="pano"></div>');
+    infowindow.setContent('<div><strong>' + this.title + '</strong></div>' + '<div>' + this.content + '<br>'+ this.likes+ '<br>'+ this.rating);
     infowindow.open(map, this);
     
        
@@ -48,6 +47,29 @@ function fMarker(name, lat, lng, type, content) {
 
         }
     });
+
+
+        this.addInfoToWindow = function(marker) {
+        $.ajax({
+            url: "https://api.foursquare.com/v2/venues/" + marker.id + '?client_id=HEBIV3Y4ZJODRMIQ5SL2NHEUDQJHNGLZBDKZXJZP3LELTNWN&client_secret=E2EU3RZ23OUJZWKYD3DV22C5H3GFWK5WESZRCIBKIPZTRCTB&v=20170925',
+            dataType: "json",
+            success: function(data) {
+                // stores results to display likes and ratings
+                var result = data.response.venue;
+                // add likes and ratings to marker
+                marker.likes = result.likes.summary  ? result.likes.summary : "No Likes";
+                marker.rating = result.hasOwnProperty('rating') ? result.rating : "No Rating";
+            },
+            //alert if there is error in recievng json
+            error: function(xhr, status, thrownError) {
+                console.log("Foursquare data is unavailable. Please try again later.");
+                marker.likes = "FS Like Data unavailable";
+                marker.rating = "FS Rating Data unavailable";
+            }
+        });
+
+        this.addInfoToWindow(marker);
+    };
 }
 
 
@@ -57,11 +79,11 @@ function fMarker(name, lat, lng, type, content) {
 var ViewModel = function() {
     var self = this;
     this.points = ko.observableArray([
-        new fMarker('Ikko Sushi', 38.99119779999999, -77.02930119999999, 'restaurant', 'WOW!I am a Japanese restaurant'),
-        new fMarker('Kung Fu Tea', 38.9970677, -77.0269637, 'drink', 'WOW!I am a Bubble Tea.'),
-        new fMarker('Olazzo italian', 38.9926756, -77.02641129999999, 'restaurant', 'WOW!I am a Italian restaurant'),
-        new fMarker('Bump n Grind', 38.990391, -77.029788, 'drink', 'Want some coffe?'),
-        new fMarker('Whole Foods Market', 38.996330, -77.024240, 'grocery', 'Its always Fresh')
+        new fMarker('Ikko Sushi', 38.99119779999999, -77.02930119999999, 'restaurant', 'WOW!I am a Japanese restaurant', '4bfeb934daf9c9b6ed26f9ef'),
+        new fMarker('Kung Fu Tea', 38.9970677, -77.0269637, 'drink', 'WOW!I am a Bubble Tea.', '4c620a96edd320a10135ac29'),
+        new fMarker('Olazzo italian', 38.9926756, -77.02641129999999, 'restaurant', 'WOW!I am a Italian restaurant', '4c620a96edd320a10135ac29'),
+        new fMarker('Bump n Grind', 38.990391, -77.029788, 'drink', 'Want some coffe?', '4c620a96edd320a10135ac29'),
+        new fMarker('Whole Foods Market', 38.996330, -77.024240, 'grocery', 'Its always Fresh', '4c620a96edd320a10135ac29')
     ]);
 
     ///fitler for the sidebar in html
@@ -107,6 +129,7 @@ var ViewModel = function() {
         });
 
     }, this);
+
 
 };
 
