@@ -12,6 +12,7 @@ To view live version can be found [here](https://millie88888.github.io/Neighborh
 - [Bootstrap](http://getbootstrap.com/)
 - [Knockoutjs](https://knockoutjs.com/)
 - [Google Map API](https://developers.google.com/maps/)
+- [Google Fonts](https://fonts.google.com/)
 - [jQuery](http://jquery.com/)  
 - [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)  
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)  
