@@ -49,27 +49,6 @@ function fMarker(name, lat, lng, type, content, id) {
     });
 
 
-        this.addInfoToWindow = function(marker) {
-        $.ajax({
-            url: "https://api.foursquare.com/v2/venues/" + marker.id + '?client_id=HEBIV3Y4ZJODRMIQ5SL2NHEUDQJHNGLZBDKZXJZP3LELTNWN&client_secret=E2EU3RZ23OUJZWKYD3DV22C5H3GFWK5WESZRCIBKIPZTRCTB&v=20170925',
-            dataType: "json",
-            success: function(data) {
-                // stores results to display likes and ratings
-                var result = data.response.venue;
-                // add likes and ratings to marker
-                marker.likes = result.likes.summary  ? result.likes.summary : "No Likes";
-                marker.rating = result.hasOwnProperty('rating') ? result.rating : "No Rating";
-            },
-            //alert if there is error in recievng json
-            error: function(xhr, status, thrownError) {
-                console.log("Foursquare data is unavailable. Please try again later.");
-                marker.likes = "FS Like Data unavailable";
-                marker.rating = "FS Rating Data unavailable";
-            }
-        });
-
-        this.addInfoToWindow(marker);
-    };
 }
 
 
@@ -129,6 +108,29 @@ var ViewModel = function() {
         });
 
     }, this);
+
+
+    this.addInfoToWindow = function(marker) {
+        $.ajax({
+            url: "https://api.foursquare.com/v2/venues/" + marker.id + '?client_id=HEBIV3Y4ZJODRMIQ5SL2NHEUDQJHNGLZBDKZXJZP3LELTNWN&client_secret=E2EU3RZ23OUJZWKYD3DV22C5H3GFWK5WESZRCIBKIPZTRCTB&v=20170925',
+            dataType: "json",
+            success: function(data) {
+                // stores results to display likes and ratings
+                var result = data.response.venue;
+                // add likes and ratings to marker
+                marker.likes = result.likes.summary  ? result.likes.summary : "No Likes";
+                marker.rating = result.hasOwnProperty('rating') ? result.rating : "No Rating";
+            },
+            //alert if there is error in recievng json
+            error: function(xhr, status, thrownError) {
+                console.log("Foursquare data is unavailable. Please try again later.");
+                marker.likes = "FS Like Data unavailable";
+                marker.rating = "FS Rating Data unavailable";
+            }
+        });
+
+        this.addInfoToWindow(marker);
+    };
 
 
 };
