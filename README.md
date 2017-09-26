@@ -13,7 +13,8 @@ To view live version can be found [here](https://millie88888.github.io/Neighborh
 - [Font Awesome](http://fontawesome.io/) 
  
 ### Set up and run
-- Click the button [![NuGet version](https://badge.fury.io/nu/Knockout.Validation.svg)](http://badge.fury.io/nu/Knockout.Validation)
+- Click the button "Clone or download".
+- To view this project, open index.html to your browser with internet connection.
 
 ### Project specifications - Udacity's project requirements
 
