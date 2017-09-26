@@ -59,10 +59,11 @@ your UI and in your README that you are using Foursquare data.
 - Functionality is presented in a usable and responsive manner.
 
 **Documentation** must include the following features:
-- A README file is included detailing all steps required to successfully run the application. (Think I got that covered)
+- A README file is included detailing all steps required to successfully run the application.
 - Comments are present and effectively explain longer code procedures.
 - Code is formatted with consistent, logical, and easy-to-read formatting as described in 
-the [Udacity JavaScript Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html).If build tools (such as Gulp or Grunt) are used, both source and production code are submitted in the same repository in separate directories. These directories are usually named src and dist respectively.
+the [Udacity JavaScript Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html).
+If build tools (such as Gulp or Grunt) are used, both source and production code are submitted in the same repository in separate directories. These directories are usually named src and dist respectively.
 
 
 ### Authors
