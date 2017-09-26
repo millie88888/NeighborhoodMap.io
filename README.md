@@ -1,12 +1,7 @@
 # Neighborhood Map
-
-
 Build a single page application with Google Map Service API.
-
 In this project you will see what I recommand the places to go, 
-
 all the markers presented the locations's informations.
-
 To view live version can be found [here](https://millie88888.github.io/NeighborhoodMap.io/).
 
 ### Frameworks/technologies used
@@ -17,7 +12,8 @@ To view live version can be found [here](https://millie88888.github.io/Neighborh
 - [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)  
 - [Font Awesome](http://fontawesome.io/) 
  
-
+### Set up and run
+- Click the button [![NuGet version](https://badge.fury.io/nu/Knockout.Validation.svg)](http://badge.fury.io/nu/Knockout.Validation)
 
 ### Project specifications - Udacity's project requirements
 
