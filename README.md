@@ -9,10 +9,11 @@ To view live version can be found [here](https://millie88888.github.io/Neighborh
 - To view this project, open index.html to your browser with internet connection.
 
 ### Frameworks/technologies used
-- [Bootstrap](http://getbootstrap.com/)
-- [Knockoutjs](https://knockoutjs.com/)
+- [Foursquare API](https://developer.foursquare.com/)
 - [Google Map API](https://developers.google.com/maps/)
 - [Google Fonts](https://fonts.google.com/)
+- [Bootstrap](http://getbootstrap.com/)
+- [Knockoutjs](https://knockoutjs.com/)
 - [jQuery](http://jquery.com/)  
 - [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)  
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)  
