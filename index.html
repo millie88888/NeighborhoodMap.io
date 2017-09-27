@@ -57,7 +57,7 @@
                             </label>
 
                             <div data-bind='template: { foreach: markersToShow }'>
-                                <div data-bind='text: name, click: marker'> </div>
+                                <div data-bind='text: name, click: $parent.marker'> </div>
                                 <div data-bind='fmarker'> </div>
                             </div>
 
