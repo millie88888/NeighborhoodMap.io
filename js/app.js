@@ -32,9 +32,6 @@ function initMap() {
 
         this.marker.addListener('click', function() {
 
-            infowindow.setContent('<div><strong>' + this.title + '</strong></div>' + '<div>' + this.content + '<br>' + this.likes + '<br>' + this.rating);
-            infowindow.open(map, this);
-
             var marker = this;
             if (this.getAnimation() !== null) {
                 this.setAnimation(null);
@@ -57,6 +54,10 @@ function initMap() {
                         // add likes and ratings to marker
                         marker.likes = result.likes.summary ? result.likes.summary : "No Likes";
                         marker.rating = result.hasOwnProperty('rating') ? result.rating : "No Rating";
+
+                        infowindow.setContent('<div><strong>' + marker.title + '</strong></div>' + '<div>' + marker.content + '<br>' + marker.likes + '<br>' + marker.rating);
+                        infowindow.open(map, marker);
+
                     },
                     //alert if there is error in recievng json
                     error: function(xhr, status, thrownError) {
@@ -69,7 +70,14 @@ function initMap() {
 
             };
             //console.log("My function gets called")
-            this.addInfoToWindow(marker);
+            if (!marker.likes) {
+                console.log("addInfoToWindow");
+                this.addInfoToWindow(marker);
+            } else {
+                console.log('open')
+                infowindow.setContent('<div><strong>' + marker.title + '</strong></div>' + '<div>' + marker.content + '<br>' + marker.likes + '<br>' + marker.rating);
+                infowindow.open(map, marker);
+            }
 
         });
 
@@ -108,6 +116,13 @@ function initMap() {
 
         this.clickOption = function(option) {
             self.typeToShow(option.value);
+        };
+
+        // http://knockoutjs.com/documentation/click-binding.html#note-1-passing-a-current-item-as-a-parameter-to-your-handler-function
+        this.markerOpenInfoWindow = function(clickedItem) {
+            var marker = clickedItem.marker;
+            console.log(clickedItem)
+            google.maps.event.trigger(marker, 'click');
         };
 
         ///filter marker with checked: typeToShow
@@ -333,7 +348,6 @@ function initMap() {
     ko.applyBindings(viewModel);
 
 };
-
 
 
 
