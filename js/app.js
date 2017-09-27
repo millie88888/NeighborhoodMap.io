@@ -71,10 +71,7 @@ function initMap() {
             //console.log("My function gets called")
             this.addInfoToWindow(marker);
 
-
         });
-
-
 
     }
 
