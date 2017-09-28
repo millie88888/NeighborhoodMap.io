@@ -42,7 +42,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <h1>Are you looking for something?</h1>
+                        <h1>OOPS!Google Maps could not loaded...</h1>
+                        <p class="error-msg" data-bind="text: errorMsg">Please try again later.</p>
+
                         <p data-bind='fadeVisible: filtermarker'>
                             Show:
                             <label>
@@ -56,16 +58,11 @@
                                 <input type='radio' value='grocery' data-bind='checked: typeToShow' /> Grocery
                             </label>
 
-                            <div>
-                                <p class="error-msg" data-bind="text: errorMsg">OOPS!Google Maps could not loaded. Please try again later.</p>
-                            </div>
-
                             <div id="map"></div>
 
                     </div>
                 </div>
             </div>
-            <i class="fa fa-facebook" aria-hidden="true" style="color: white"></i>
         </div>
         <!-- /#page-content-wrapper -->
 
