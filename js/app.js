@@ -343,7 +343,10 @@ function initMap() {
         styles: styles
     });
 
-
+    function errorMap(){
+        //alert('Map cant Load.');
+        window.open('error.html', '_self');
+    }
 
     var infowindow = new google.maps.InfoWindow();
 
@@ -356,9 +359,6 @@ function initMap() {
 
 
 
-function errorMap(){
-    alert('The image could not be loaded.');
-        //window.open('error.html', '_self');
-}
+
 
 
