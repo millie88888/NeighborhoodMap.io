@@ -86,8 +86,7 @@ function initMap() {
 
     function errorMap(){
         window.open('error.html', '_self');
-    };
-
+    }
 
     // Constructor function
     var ViewModel = function() {
