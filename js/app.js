@@ -84,9 +84,8 @@ function initMap() {
 
     }
 
-    function errorMap(){
-        window.open('error.html', '_self');
-    }
+
+
 
     // Constructor function
     var ViewModel = function() {
@@ -198,6 +197,8 @@ function initMap() {
         $('[data-toggle="offcanvas"]').click(function() {
             $('#wrapper').toggleClass('toggled');
         });
+
+
     });
 
 
@@ -343,6 +344,7 @@ function initMap() {
     });
 
 
+
     var infowindow = new google.maps.InfoWindow();
 
 
@@ -354,5 +356,9 @@ function initMap() {
 
 
 
+function errorMap(){
+    alert('The image could not be loaded.');
+        //window.open('error.html', '_self');
+}
 
 
