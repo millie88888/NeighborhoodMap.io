@@ -74,7 +74,7 @@ function initMap() {
                 console.log("addInfoToWindow");
                 this.addInfoToWindow(marker);
             } else {
-                console.log('open')
+                console.log('open');
                 infowindow.setContent('<div><strong>' + marker.title + '</strong></div>' + '<div>' + marker.content + '<br>' + marker.likes + '<br>' + marker.rating);
                 infowindow.open(map, marker);
             }
@@ -121,7 +121,7 @@ function initMap() {
         // http://knockoutjs.com/documentation/click-binding.html#note-1-passing-a-current-item-as-a-parameter-to-your-handler-function
         this.markerOpenInfoWindow = function(clickedItem) {
             var marker = clickedItem.marker;
-            console.log(clickedItem)
+            console.log(clickedItem);
             google.maps.event.trigger(marker, 'click');
         };
 
@@ -347,9 +347,4 @@ function initMap() {
     var viewModel = new ViewModel();
     ko.applyBindings(viewModel);
 
-};
-
-
-
-
-
+}
