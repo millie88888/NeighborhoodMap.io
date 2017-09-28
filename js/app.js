@@ -61,9 +61,10 @@ function initMap() {
                     },
                     //alert if there is error in recievng json
                     error: function(xhr, status, thrownError) {
-                        console.log("Foursquare data is unavailable. Please try again later.");
                         marker.likes = "FS Like Data unavailable";
                         marker.rating = "FS Rating Data unavailable";
+                        infowindow.setContent('<div><strong>' + marker.title + '</strong></div>' + '<div>' + marker.content + '<br>' + marker.likes + '<br>' + marker.rating);
+                        infowindow.open(map, marker);
                     }
 
                 });
@@ -91,10 +92,10 @@ function initMap() {
         var self = this;
         this.points = ko.observableArray([
             new fMarker('Ikko Sushi', 38.99119779999999, -77.02930119999999, 'restaurant', 'WOW!I am a Japanese restaurant', '4bfeb934daf9c9b6ed26f9ef'),
-            new fMarker('Kung Fu Tea', 38.9970677, -77.0269637, 'drink', 'WOW!I am a Bubble Tea.', '4c620a96edd320a10135ac29'),
-            new fMarker('Olazzo italian', 38.9926756, -77.02641129999999, 'restaurant', 'WOW!I am a Italian restaurant', '4c620a96edd320a10135ac29'),
-            new fMarker('Bump n Grind', 38.990391, -77.029788, 'drink', 'Want some coffe?', '4c620a96edd320a10135ac29'),
-            new fMarker('Whole Foods Market', 38.996330, -77.024240, 'grocery', 'Its always Fresh', '4c620a96edd320a10135ac29')
+            new fMarker('Kung Fu Tea', 38.9970677, -77.0269637, 'drink', 'WOW!I am a Bubble Tea.', '58221955fed4400bb04805d4'),
+            new fMarker('Olazzo italian', 38.9926756, -77.02641129999999, 'restaurant', 'WOW!I am a Italian restaurant', '4ad4c018f964a520a5f020e3'),
+            new fMarker('Bump n Grind', 38.990391, -77.029788, 'drink', 'Want some coffe?', '527b9be311d25146b36f2986'),
+            new fMarker('Whole Foods Market', 38.996330, -77.024240, 'grocery', 'Its always Fresh', '4a76d917f964a52031e31fe3')
         ]);
 
         ///fitler for the sidebar in html
@@ -348,3 +349,8 @@ function initMap() {
     ko.applyBindings(viewModel);
 
 }
+
+
+
+
+
