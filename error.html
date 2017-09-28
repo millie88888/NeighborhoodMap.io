@@ -56,14 +56,11 @@
                                 <input type='radio' value='grocery' data-bind='checked: typeToShow' /> Grocery
                             </label>
 
-                            <div data-bind='template: { foreach: markersToShow }'>
-                                <div data-bind='text: name, click: $root.markerOpenInfoWindow'> </div>
-                                <div data-bind='fmarker'> </div>
+                            <div>
+                                <p class="error-msg" data-bind="text: errorMsg">OOPS!Google Maps could not loaded. Please try again later.</p>
                             </div>
-                            <button onclick="myFunction()">Try it</button>
 
                             <div id="map"></div>
-
 
                     </div>
                 </div>
@@ -80,7 +77,7 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/app.js"></script>
 <script src="https://use.fontawesome.com/6985fafc06.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuDtn5K9EeNV4eszH4K8I-gcDVwBROgvI&callback=initMap" onerror="errorMap()"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuDtn5K9EeNV4eszH4K8I-gcDVwBROgvI&callback=initMap"></script>
 
 </html>
 

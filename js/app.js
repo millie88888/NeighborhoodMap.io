@@ -84,11 +84,14 @@ function initMap() {
 
     }
 
-
+    function errorMap(){
+        window.open('error.html', '_self');
+    };
 
 
     // Constructor function
     var ViewModel = function() {
+
         var self = this;
         this.points = ko.observableArray([
             new fMarker('Ikko Sushi', 38.99119779999999, -77.02930119999999, 'restaurant', 'WOW!I am a Japanese restaurant', '4bfeb934daf9c9b6ed26f9ef'),
