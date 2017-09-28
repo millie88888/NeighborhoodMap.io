@@ -1,4 +1,4 @@
-function initMap() {
+var initMap = function() {
 
     // fMarker to set the marker display
     function fMarker(name, lat, lng, type, content, id) {
@@ -84,9 +84,6 @@ function initMap() {
 
     }
 
-
-
-
     // Constructor function
     var ViewModel = function() {
 
@@ -149,8 +146,6 @@ function initMap() {
             });
 
         }, this);
-
-
 
 
     };
@@ -332,8 +327,6 @@ function initMap() {
         }]
     }];
 
-
-
     /////// call map to display
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -343,19 +336,17 @@ function initMap() {
         styles: styles
     });
 
-    function errorMap(){
-        //alert('Map cant Load.');
-        window.open('error.html', '_self');
-    }
-
     var infowindow = new google.maps.InfoWindow();
-
-
 
     var viewModel = new ViewModel();
     ko.applyBindings(viewModel);
 
-}
+};
+
+
+var errorMap = function() {
+     window.open('error.html', '_self');
+};
 
 
 
